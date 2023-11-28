@@ -159,6 +159,87 @@ Dalam contoh di bawah ini, terdapat class PersegiPanjang dengan dua properti: pa
 
 ```dart
 class PersegiPanjang {
-    doub
+    double? panjang;
+    double? lebar;
+
+    double area(){
+        return panjang! * lebar!;
+    }
+}
+
+void main(){
+    PersegiPanjang persegiPanjang = PersegiPanjang();
+    persegiPanjang.panjang = 10;
+    persegiPanjang.lebar = 5;
+    print("Luar Persegi Panjang adalah ${persegiPanjang.area()}.");
 }
 ```
+
+Catatan: Tanda seru (!) digunakan untuk memberitahu kompiler bahwa variabel tersebut tidak null. Jika Anda tidak menggunakan tanda seru, maka Anda akan mendapatkan error. Anda akan mempelajari lebih lanjut tentang null safety nanti.
+
+### Contoh 3: Menghitung Bunga Sederhana Menggunakan class dan Object
+
+Dalam contoh di bawah ini, terdapat class BungaSederhana dengan tiga properti: pokok, sukuBunga, dan waktu. class ini juga memiliki method bunga() yang menghitung bunga sederhana.
+
+```dart
+class BungaSederhana {
+    double? pokok;
+    double? sukuBunga;
+    double? waktu;
+
+    double bunga(){
+        return (pokok! * sukuBunga! * waktu!) / 100
+    }
+}
+
+void main(){
+    BungaSederhana bungaSederhana = BungaSederhana();
+    bungaSederhana.pokok = 1000;
+    bungaSederhana.sukuBunga = 10;
+    bungaSederhana.waktu = 2;
+    print("Bunga Sederhana adalah ${bungaSederhana.bunga()}.");
+}
+```
+
+### Challenge
+
+Buatlah class Rumah dengan properti nama, alamat, jumlahKamar. Buatlah method display() yang mencetak nilai dari ketiga properti tersebut. Buat Object dari class Rumah dan atur nilai-nilai propertinya. Panggil method display() untuk mencetak nilai dari ketiga properti tersebut.
+
+## Constructor dalam Pemrograman Dart
+
+Constructor adalah method khusus yang digunakan untuk menginisialisasi Object. Constructor dipanggil secara otomatis saat Object dibuat dan dapat digunakan untuk mengatur nilai awal properti Object. Sebagai contoh, kode berikut membuat Object class Orang dan mengatur nilai awal untuk properti nama dan umur.
+
+```dart
+Orang orang = Orang("Budi",30);
+```
+
+### Tanpa Constructor
+
+Jika Anda tidak mendefinisikan Constructor untuk class, maka Anda perlu mengatur nilai properti secara manual. Sebagai contoh, kode berikut membuat Object class Orang dan mengatur nilai untuk properti nama dan umur.
+
+```dart
+Orang orang = Orang();
+orang.nama = "Budi";
+orang.umur = 30;
+```
+
+#### Hal-hal yang Perlu Diperhatikan
+
+- Nama Constructor harus sama dengan nama class.
+- Constructor tidak memiliki
+  tipe pengembalian.
+
+#### Sintaks:
+
+```dart
+class ClassName {
+    // deklarasi konstruktor: sama dengan nama class
+    ClassName() {
+        // isi dari konstruktor
+    }
+}
+```
+
+### Contoh 1: Cara Mendeklarasikan Constructor dalam Dart
+
+Dalam contoh di bawah ini, terdapat class Siswa dengan tiga properti: nama, umur, dan nomorInduk. class ini memiliki satu Constructor. Constructor digunakan untuk menginisialisasi nilai dari ketiga properti tersebut. Kami juga membuat Object dari class Siswa yang disebut siswa.
