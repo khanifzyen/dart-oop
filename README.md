@@ -6,9 +6,19 @@ OOP (Object-oriented programming) adalah metode pemrograman yang menggunakan Obj
 
 Keuntungan dari OOP antara lain mudah dimengerti dan digunakan, meningkatkan daya guna ulang dan mengurangi kompleksitas, meningkatkan produktivitas programmer, membuat kode lebih mudah dipelihara, dimodifikasi, dan didebug, serta mendorong kerjasama dan kolaborasi.
 
-Fitur-fitur OOP antara lain class, object, enkapsulasi, pewarisan(inheritance), polimorfisme, dan abstraksi. OOP bertujuan untuk memecahkan masalah yang kompleks menjadi Object yang lebih kecil.
+Fitur-fitur OOP antara lain:
+
+1. class dan object
+2. enkapsulasi (encapsulation)
+3. pewarisan (inheritance)
+4. polimorfisme
+5. abstraksi
+
+OOP bertujuan untuk memecahkan masalah yang kompleks menjadi Object yang lebih kecil.
 
 OOP dapat membuat kode menjadi lebih modular,fleksibel, dan mudah diperluas. OOP dapat membantu Anda memahami dan menyelesaikan masalah dengan lebih baik.
+
+## Konsep OOP di Dart: Class dan Object
 
 ## Class dalam Dart
 
@@ -866,5 +876,172 @@ void main() {
   vehicle.year = 2019;
   print(vehicle.model);
   print(vehicle.year);
+}
+```
+
+## Konsep OOP di Dart: Inheritance
+
+Inheritance atau pewarisan adalah konsep dalam pemrograman berorientasi objek (OOP) di mana sebuah class dapat mewarisi properti dan metode dari class lain. Class yang mewarisi disebut subclass atau child class, sedangkan class yang memberikan warisan disebut superclass atau parent class. Menggunakan keyword `extends` untuk menerima warisan dari parent class.
+
+### Sintaks:
+
+```dart
+class ParentClass {
+  // Parent class code
+}
+
+class ChildClass extends ParentClass {
+  // Child class code
+}
+```
+
+**Catatan:** Setiap kali Anda menggunakan pewarisan, ia selalu membuat hubungan "adalah" antara class induk dan anak, seperti **Mahasiswa adalah Orang**, **Truk adalah Kendaraan**, **Sapi adalah Hewan**, dan sebagainya.
+
+Dart mendukung inheritance tunggal, berarti class anak hanya bisa mewarisi dari satu class induk. Dart tidak mendukung multi inheritance yang berarti class anak tidak dapat mewarisi dari beberapa class induk.
+
+### Tujuan inheritance:
+
+- Penggunaan Kembali Kode (Code Reusability): Menghindari duplikasi kode dengan menggunakan properti dan metode yang sudah ada.
+- Struktur Hirarki: Membentuk struktur hierarki antara class.
+
+### Contoh 1: Inheritance di dart
+
+```dart
+// Parent Class
+class Binatang {
+  String jenis;
+
+  Binatang(this.jenis);
+
+  void bersuara() {
+    print('Sebuah binatang dari jenis $jenis bersuara.');
+  }
+}
+
+// Child Class yang mewarisi dari Binatang
+class Kucing extends Binatang {
+  String jenisBulu;
+
+  Kucing(String jenis, this.jenisBulu) : super(jenis);
+
+  void tidur() {
+    print('Kucing tidur dengan nyenyak.');
+  }
+}
+```
+
+### Penggunaan keyword `super`
+
+Keyword `super` digunakan untuk merujuk ke superclass (parent class). Dalam contoh di atas, `super(jenis)` digunakan untuk memanggil constructor dari superclass saat membuat objek dari subclass.
+
+### Contoh 2: Inheritance di dart
+
+```dart
+class Orang {
+  // Property
+  String? nama;
+  int? umur;
+
+  // Method
+  void tampil() {
+    print("Nama: $nama");
+    print("Umur: $umur");
+  }
+}
+// Disini class Murid akan mewarisi property dan method dari class Orang
+class Murid extends Orang {
+  // property
+  String? namaSekolah;
+  String? alamatSekolah;
+
+  // Method
+  void tampilInfoSekolah() {
+    print("Nama Sekolah: $namaSekolah");
+    print("Alamat Sekolah: $alamatSekolah");
+  }
+}
+
+void main() {
+  // Membuat object dari class Murid
+  var murid = Murid();
+  murid.nama = "Joko";
+  murid.umur = 16;
+  murid.namaSekolah = "SMA N 1";
+  murid.alamatSekolah = "Jepara";
+  murid.tampil();
+  murid.tampilInfoSekolah();
+}
+```
+
+### Jenis inheritance
+
+1. single inheritance: pewarisan dari satu ParentClass ke satu ChildClass
+
+```
+  -- Kendaraan     // class Kendaraan
+     |-- Mobil     // class Mobil extends Kendaraan
+```
+
+2. multilevel inheritance:pewarisan dari satu ParentClass ke satu ChildClass kemudian ke bawah subclassnya lagi.
+
+```
+  -- Kendaraan     // class Kendaraan
+     |-- Mobil     // class Mobil extends Kendaraan
+         |-- Tesla // class Tesla extends Mobil
+```
+
+3. hierachical inheritance: pewarisan dari satu ParentClass ke dua ChildClass
+
+```
+  -- Kendaraan     // class Kendaraan
+     |-- Mobil     // class Mobil extends Kendaraan
+     |-- Motor     // class Motor extends Kendaraan
+```
+
+4. multiple inheritance: pewarisan dari dua ParentClass atau lebih ke satu ChildClass. **Ini tidak didukung oleh dart.**
+
+```
+  -- Buah           // class Buah
+  -- Sayuran        // class Sayuran
+     |-- Tomat      // class Tomat extends Buah, Sayuran
+```
+
+### Contoh 3: Multilevel Inheritance di dart
+
+```dart
+class Mobil {
+    // Property
+    String? nama;
+    double? harga;
+}
+
+class Tesla extends Mobil {
+    // Method untuk menampilkan nilai dari property
+    void tampil() {
+        print("Nama: ${nama}");
+        print("Harga: ${harga}");
+    }
+}
+
+class Model3 extends Tesla {
+    // Property
+    String? warna;
+
+    // Method untuk menampilkan nilai dari property
+    void tampil() {
+        super.tampil();
+        print("Warna: ${warna}");
+    }
+}
+
+void main() {
+    // Membuat object dari class Model3
+    Model3 m = new Model3();
+    // memberikan nilai ke object
+    m.nama = "Tesla Model 3";
+    m.harga = 50000.00;
+    m.warna = "Merah";
+    // Menampilkan nilai dari object
+    m.tampil();
 }
 ```
