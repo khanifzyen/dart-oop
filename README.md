@@ -8,11 +8,11 @@ Keuntungan dari OOP antara lain mudah dimengerti dan digunakan, meningkatkan day
 
 Fitur-fitur OOP antara lain:
 
-1. class dan object
-2. enkapsulasi (encapsulation)
-3. pewarisan (inheritance)
-4. polimorfisme
-5. abstraksi
+1. [class dan object](#konsep-oop-di-dart-class-dan-object)
+2. [enkapsulasi (encapsulation)](#konsep-oop-di-dart-encapsulation)
+3. [pewarisan (inheritance)](#konsep-oop-di-dart-inheritance)
+4. [polimorfisme](#konsep-oop-di-dart-polymorphism)
+5. [abstraksi](#konsep-oop-di-dart-abstract)
 
 OOP bertujuan untuk memecahkan masalah yang kompleks menjadi Object yang lebih kecil.
 
@@ -907,36 +907,6 @@ Dart mendukung inheritance tunggal, berarti class anak hanya bisa mewarisi dari 
 ### Contoh 1: Inheritance di dart
 
 ```dart
-// Parent Class
-class Binatang {
-  String jenis;
-
-  Binatang(this.jenis);
-
-  void bersuara() {
-    print('Sebuah binatang dari jenis $jenis bersuara.');
-  }
-}
-
-// Child Class yang mewarisi dari Binatang
-class Kucing extends Binatang {
-  String jenisBulu;
-
-  Kucing(String jenis, this.jenisBulu) : super(jenis);
-
-  void tidur() {
-    print('Kucing tidur dengan nyenyak.');
-  }
-}
-```
-
-### Penggunaan keyword `super`
-
-Keyword `super` digunakan untuk merujuk ke superclass (parent class). Dalam contoh di atas, `super(jenis)` digunakan untuk memanggil constructor dari superclass saat membuat objek dari subclass.
-
-### Contoh 2: Inheritance di dart
-
-```dart
 class Orang {
   // Property
   String? nama;
@@ -1006,7 +976,7 @@ void main() {
      |-- Tomat      // class Tomat extends Buah, Sayuran
 ```
 
-### Contoh 3: Multilevel Inheritance di dart
+### Contoh 2: Multilevel Inheritance di dart
 
 ```dart
 class Mobil {
@@ -1046,7 +1016,7 @@ void main() {
 }
 ```
 
-### Contoh 4: Hierarchical Inherintance di dart
+### Contoh 3: Hierarchical Inherintance di dart
 
 ```dart
 class Bangun {
@@ -1087,3 +1057,41 @@ void main() {
   print("Luas segitiga: ${segitiga.luas()}");
 }
 ```
+
+### Contoh 4: Inheritance Constructor dengan parameter di dart
+
+```dart
+// Parent Class
+class Binatang {
+  String jenis;
+
+  Binatang(this.jenis);
+
+  void bersuara() {
+    print('Sebuah binatang dari jenis $jenis bersuara.');
+  }
+}
+
+// Child Class yang mewarisi dari Binatang
+class Kucing extends Binatang {
+  String jenisBulu;
+
+  Kucing(String jenis, this.jenisBulu) : super(jenis);
+
+  void tidur() {
+    print('Kucing tidur dengan nyenyak.');
+  }
+}
+```
+
+### Penggunaan keyword `super`
+
+Keyword `super` digunakan untuk merujuk ke superclass (parent class). Dalam contoh di atas, `super(jenis)` digunakan untuk memanggil constructor dari superclass saat membuat objek dari subclass.
+
+## Konsep OOP di Dart: Polymorphism
+
+asd
+
+## Konsep OOP di Dart: Abstract
+
+asd
