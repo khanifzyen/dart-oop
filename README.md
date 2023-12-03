@@ -2,6 +2,18 @@
 
 Materi Mata Kuliah Pemrograman Mobile | Teknik Informatika UNISNU Jepara | Akhmad Khanif Zyen
 
+> **Cara menggunakan modul ini:**
+>
+> 1. Login ke akun github anda.
+> 2. Star ke repository ini.
+> 3. Fork repository ini sehingga masuk ke repository di akun github masing-masing.
+> 4. Clone project dari repository github masing-masing.
+> 5. Buat branch baru `dev` dan gunakan sebagai branch yang aktif.
+> 6. Mulai praktek, selesai praktek lakukan commit dengan label sesuai materi yang dikerjakan.
+> 7. Lakukan push ke repository github masing-masing
+> 8. Jika sudah selesai semua, kembali ke repository ini, kemudian masuk ke menu `issue`, tulis identitas diri dan link repo github hasil dari fork project ini.
+> 9. Penilaian berdasarkan pekerjaan di branch `dev` pada repo akun github masing-masing.
+
 OOP (Object-oriented programming) adalah metode pemrograman yang menggunakan Object dan interaksinya untuk merancang dan membuat aplikasi. OOP digunakan pada banyak bahasa pemrograman, seperti Dart, Java, C++, Python, dan lain-lain.
 
 Keuntungan dari OOP antara lain mudah dimengerti dan digunakan, meningkatkan daya guna ulang dan mengurangi kompleksitas, meningkatkan produktivitas programmer, membuat kode lebih mudah dipelihara, dimodifikasi, dan didebug, serta mendorong kerjasama dan kolaborasi.
