@@ -2,17 +2,36 @@
 
 Materi Mata Kuliah Pemrograman Mobile | Teknik Informatika UNISNU Jepara | Akhmad Khanif Zyen
 
+---
+
 > **Cara menggunakan modul ini:**
 >
 > 1. Login ke akun github anda.
 > 2. Star ke repository ini.
 > 3. Fork repository ini sehingga masuk ke repository di akun github masing-masing.
 > 4. Clone project dari repository github masing-masing.
+>    ```bash
+>    git clone https://github.com/namauser/dart-oop.git
+>    ```
 > 5. Buat branch baru `dev` dan gunakan sebagai branch yang aktif.
+>
+>    ```bash
+>    git checkout -b dev
+>    ```
+>
 > 6. Mulai praktek, selesai praktek lakukan commit dengan label sesuai materi yang dikerjakan.
+>
+>    ```bash
+>    git add .
+>    git commit -m "contoh 1 inheritance"
+>    ```
+>
 > 7. Lakukan push ke repository github masing-masing
-> 8. Jika sudah selesai semua, kembali ke repository ini, kemudian masuk ke menu `issue`, tulis identitas diri dan link repo github hasil dari fork project ini.
-> 9. Penilaian berdasarkan pekerjaan di branch `dev` pada repo akun github masing-masing.
+>    ```bash
+>    git push -u origin dev
+>    ```
+> 8. Jika sudah selesai semua, kembali ke repository ini, kemudian masuk ke menu `issue`, tulis identitas diri (NIM, Nama) dan link repo github hasil dari fork project ini.
+> 9. Penilaian berdasarkan commit di branch `dev` pada repo akun github masing-masing.
 
 OOP (Object-oriented programming) adalah metode pemrograman yang menggunakan Object dan interaksinya untuk merancang dan membuat aplikasi. OOP digunakan pada banyak bahasa pemrograman, seperti Dart, Java, C++, Python, dan lain-lain.
 
@@ -69,7 +88,11 @@ class Mobil {
 
 Dalam contoh di atas, kita mendefinisikan class Mobil dengan tiga variabel (merk, model, dan tahun) dan satu method (klakson).
 
+---
+
 Materi Mata Kuliah Pemrograman Mobile | Teknik Informatika UNISNU Jepara | Akhmad Khanif Zyen
+
+---
 
 ## Membuat object dari class
 
@@ -147,6 +170,8 @@ Class adalah elemen dasar dalam pemrograman berorientasi Object yang membantu ki
 
 Object adalah instansi dari class yang digunakan untuk mengakses variabel dan method dalam class. Dengan memahami cara kerja Object, kita dapat lebih mudah mengorganisir kode dan mengembangkan aplikasi secara efisien.
 
+Materi Mata Kuliah Pemrograman Mobile | Teknik Informatika UNISNU Jepara | Akhmad Khanif Zyen
+
 ## Contoh Class & Object dalam Pemrograman Dart
 
 ### Contoh 1: class Hewan
@@ -222,6 +247,12 @@ void main(){
     print("Bunga Sederhana adalah ${bungaSederhana.bunga()}.");
 }
 ```
+
+---
+
+Materi Mata Kuliah Pemrograman Mobile | Teknik Informatika UNISNU Jepara | Akhmad Khanif Zyen
+
+---
 
 ### Challenge
 
