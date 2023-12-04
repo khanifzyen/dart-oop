@@ -1281,3 +1281,10 @@ void main() {
   mobil.berhenti();
 }
 ```
+
+> **Tugas Latihan 2**
+>
+> 1. Buat class induk Hewan dengan properti nama dan metode suara(). Selanjutnya, buat class anak Kucing yang merupakan turunan dari Hewan dan tambahkan properti jenisBulu. Buat objek dari class Kucing dan panggil metode suara().
+> 2. Buat class RekeningBank dengan properti saldo dan metode setor dan tarik. Implementasikan encapsulation agar saldo tidak dapat diakses langsung dari luar class. Buat objek dari class RekeningBank dan lakukan beberapa transaksi.
+> 3. Buat class BangunDatar dengan metode hitungLuas. Selanjutnya, buat class turunan Persegi dan Segitiga yang override metode hitungLuas. Buat objek dari kedua class tersebut dan panggil metode hitungLuas untuk masing-masing.
+> 4. Buat abstract class Bentuk dengan metode abstrak hitungLuas. Selanjutnya, buat class Lingkaran yang merupakan turunan dari Bentuk dan implementasikan metode hitungLuas. Buat objek dari class Lingkaran dan panggil metode hitungLuas.
