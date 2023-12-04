@@ -1133,8 +1133,151 @@ Keyword `super` digunakan untuk merujuk ke superclass (parent class). Dalam cont
 
 ## Konsep OOP di Dart: Polymorphism
 
-asd
+Poly berarti **banyak** dan morph berarti **bentuk**. Polimorfisme adalah kemampuan suatu objek untuk mengambil banyak bentuk. Sebagai manusia, kita memiliki kemampuan untuk mengambil banyak bentuk. Kita bisa menjadi seorang siswa, seorang guru, seorang orang tua, seorang teman, dan sebagainya. Demikian pula, dalam pemrograman berorientasi objek, polimorfisme adalah kemampuan suatu objek untuk mengambil banyak bentuk.
+
+Dalam dunia nyata, polimorfisme adalah memperbarui atau memodifikasi fitur, fungsi, atau implementasi yang sudah ada dalam class induk.
+
+### Polymorphism dengan method overriding
+
+Method overriding adalah teknik di mana Anda dapat membuat sebuah method dalam class anak yang memiliki nama yang sama dengan method dalam class induk. Method dalam class anak menggantikan method dalam class induk.
+
+### Sintaks:
+
+```dart
+class ParentClass{
+    void functionName(){
+        //isi function di parent
+    }
+}
+
+class ChildClass extends ParentClass{
+    @override
+    void functionName(){
+        //isi function di child yang berbeda dari parent
+    }
+}
+```
+
+### Tujuan polymorphism
+
+1. **Fleksibilitas:** Objek dapat mengambil banyak bentuk sesuai dengan kebutuhan.
+2. **Pemeliharaan Kode:** Mempermudah perubahan pada tingkat kelas induk tanpa mempengaruhi kelas anak.
+3. **Keterbacaan Kode:** Menyederhanakan kode dan membuatnya lebih mudah dimengerti.
+
+### Contoh 1: Polymorphism dengan method overriding di dart
+
+Dalam contoh di bawah ini, terdapat sebuah class bernama Binatang dengan sebuah method bernama `makan()`. Method `makan()` ini di-overwrite dalam class anak yang bernama Kucing.
+
+```dart
+class Binatang {
+  void makan() {
+    print("Binatang sedang makan");
+  }
+}
+
+class Kucing extends Binatang {
+  @override
+  void makan() {
+    print("Kucing sedang makan");
+  }
+}
+
+void main() {
+  Binatang binatang = Binatang();
+  binatang.makan();
+
+  Kucing kucing = Kucing();
+  kucing.makan();
+}
+```
+
+**Catatan:** Jika Anda tidak menulis `@override`, program tetap berjalan. Namun, praktek terbaik adalah dengan menuliskan `@override`.
+
+### Contoh 2: Polymorphism dengan method overriding di dart
+
+```dart
+class Pegawai{
+  void gaji(){
+    print("Gaji pegawai adalah \$1000.");
+  }
+}
+
+class Manager extends Pegawai{
+  @override
+  void gaji(){
+    print("Gaji manager adalah \$2000.");
+  }
+}
+
+class Developer extends Pegawai{
+  @override
+  void gaji(){
+    print("Gaji developer adalah \$3000.");
+  }
+}
+
+void main(){
+  Manager manager=Manager();
+  Developer developer=Developer();
+
+  manager.gaji();
+  developer.gaji();
+}
+```
 
 ## Konsep OOP di Dart: Abstract
 
-asd
+Abstract adalah salah satu prinsip dalam Pemrograman Berorientasi Objek (OOP) yang memungkinkan kita untuk menyembunyikan detail implementasi dan hanya mengekspos fungsionalitas penting dari suatu object.
+
+Class abstract adalah class yang tidak dapat diinisialisasi. Biasanya digunakan untuk mendefinisikan perilaku suatu class yang dapat diwariskan ke class lain. Class abstract dideklarasikan menggunakan kata kunci abstract.
+
+Method abstract adalah method yang dideklarasikan dalam class abstrak tanpa memberikan implementasi.Subclass dari class abstract harus mengimplementasikan semua method abstract yang dideklarasikan oleh class induk.
+
+### Sintaks:
+
+```dart
+abstract class ClassName {
+    //Body of abstract class
+    method1();
+    method2();
+}
+```
+
+### Tujuan Abstract
+
+1. **Rancangan Terstruktur:** Abstraksi memungkinkan perancangan yang terstruktur dan pemisahan antara antarmuka dan implementasi.
+2. **Fleksibilitas:** Memungkinkan penambahan fungsionalitas pada masa mendatang tanpa mempengaruhi kelas-kelas yang sudah ada.
+3. **Pemeliharaan Kode:** Mempermudah pemeliharaan dan perubahan dengan mengisolasi detail implementasi.
+
+### Contoh 1: implementasi class abstract di dart
+
+```dart
+//membuat class abstract beserta method abstract
+abstract class Kendaraan {
+  void jalankan();
+  void berhenti();
+}
+
+//implementasi class abstract
+class Mobil extends Kendaraan {
+  @override
+  void jalankan() {
+    print('Mobil mulai bergerak.');
+  }
+
+  @override
+  void berhenti() {
+    print('Mobil berhenti.');
+  }
+}
+
+//menggunakan class abstract
+void main() {
+  // Membuat object dari class nyata Mobil
+  Kendaraan mobil = Mobil();
+
+  // Memanggil method dari kelas abstract
+  mobil.jalankan();
+  mobil.berhenti();
+}
+```
